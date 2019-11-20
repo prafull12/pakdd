@@ -44,7 +44,7 @@ Prafull\inst{1}\orcidID{c}}
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-\paragraph{Prafull} The quantity of data we generate each day keeps on increasing. Today we are producing Exabytes of data per day, which is equal to the total data we had on earth in the year 2000. Various techniques are being used to utilize the data and gain knowledge from it. One such method is prediction modelling in machine learning. The accuracy of these models depends on multiple factors, of which one of the critical aspects is the presence of outliers. Outliers can induce additional loss, thus reducing the accuracy of prediction, and a small variation can sometimes lead to disastrous results. The two approaches in the proposal are based on outlier detection and outlier handling techniques. The first approach utilizes traditional outlier detection concepts like distance or similarity measure, cluster and spatial techniques for detecting and removing these outliers and thus making the predictions more accurate for machine learning algorithm called XGBoost. The second approach is based on the addition of user-defined loss functions, which are capable of making XGBoost model tolerable to outliers, thus lifting the requirement of removing the outliers. \\
+\paragraph{} The quantity of data we generate each day keeps on increasing. Today we are producing Exabytes of data per day, which is equal to the total data we had on earth in the year 2000. Various techniques are being used to utilize the data and gain knowledge from it. One such method is prediction modelling in machine learning. The accuracy of these models depends on multiple factors, of which one of the critical aspects is the presence of outliers. Outliers can induce additional loss, thus reducing the accuracy of prediction, and a small variation can sometimes lead to disastrous results. The two approaches in the proposal are based on outlier detection and outlier handling techniques. The first approach utilizes traditional outlier detection concepts like distance or similarity measure, cluster and spatial techniques for detecting and removing these outliers and thus making the predictions more accurate for machine learning algorithm called XGBoost. The second approach is based on the addition of user-defined loss functions, which are capable of making XGBoost model tolerable to outliers, thus lifting the requirement of removing the outliers. \\
 \\
 
 
@@ -54,18 +54,18 @@ Prafull\inst{1}\orcidID{c}}
 %
 %
 \section{Introduction}
-\paragraph{Prafull} In the majority of prediction problems, we examine a vast quantity of features. To obtain quality predictions, one of the first steps requires us to alleviate the impact of outliers on the learner. We propose to make the model more efficient in two different ways. In the first approach we integrate an outlier detection framework with XGBoost for detecting and removing outliers, thus making the predictions more accurate for XGBoost. The approach utilizes traditional outlier detection concepts like distance, similarity, cluster and spatial techniques. In case the outliers are not errors, outlier detection in the first approach can lead us to the process which generated the outliers. Such outliers can help us locate a malicious node in a network or a fraud transaction for a user. 
+\paragraph{} In most of the prediction tasks, we analyze a tremendous amount of data. If we want to generate accurate predictions, the initial step should be mitigating the effect of outliers on the model generation. This paper proposes two different techniques for handling outliers. Approach one combines an outlier detection framework to XGBoost prediction modelling process, to discover and eliminate outliers, thus making prediction modelling more accurate for XGBoost. The method uses outlier detection techniques based on properties like distance, time-series, ensemble etc. Using this technique, we can remove erroneous data as well as we might be able to identify the process which leads to the outlier generation. Process discovery leads to the implementation of outlier detection as various services like fraud detection, malicious node identification etc. 
 
 
 % \paragraph{Prafull}The second approach is based on the addition of user-defined loss functions, which are capable of making XGBoost model tolerable to outliers, thus lifting the requirement of removing the outliers. In this approach, we penalize the outliers based on the domain requirement. For example, we want to make predictions for the right time to reach the airport to board a flight. What if we reach 45 minutes before or 5 minutes after the plane takes off? In both cases, there is a loss of time, but the magnitude of time alone does not justify the intensity of loss. Similarly, outliers can result in various types of loss, which can be tackled by using different user-defined loss functions.
-\paragraph{Ziren} The second approach is based on the addition of user-defined loss functions, which are capable of making XGBoost model tolerable to outliers, thus lifting the requirement of removing the outliers. In this approach we construct a loss function which is less biased towards outliers than log loss (or other methods which have strong sensitivity to outliers) and has minor side effects on the normal points. The XGBoost has provided a couple of frequently used objective functions as a build-in parameter, such as logistic regression, squared loss and hinge loss \footnote{https://xgboost.readthedocs.io/en/latest/parameter.html}. However, only log squared error is sensitive to outliers and none of them uses architecture like Huber loss in those pre-defined functions, which could not meet our aim. Therefore, we customise the objective function to best fit the goal. The new function could have two choices based on the character of the point: (i) regular data are processed by a loss function which has less sensitivity to outliers (ii) whereas others are applied on outlier-sensitive loss function. One of challenges of this method is that outliers are difficult to be identified during training progress. A solution to that could be the use of unsupervised techniques from approach one, which does not require pro knowledge of outliers.
+\paragraph{} The second approach is based on the addition of user-defined loss functions, which are capable of making XGBoost model tolerable to outliers, thus lifting the requirement of removing the outliers. In this approach we construct a loss function which is less biased towards outliers than log loss (or other methods which have strong sensitivity to outliers) and has minor side effects on the normal points. The XGBoost has provided a couple of frequently used objective functions as a build-in parameter, such as logistic regression, squared loss and hinge loss \footnote{https://xgboost.readthedocs.io/en/latest/parameter.html}. However, only log squared error is sensitive to outliers and none of them uses architecture like Huber loss in those pre-defined functions, which could not meet our aim. Therefore, we customise the objective function to best fit the goal. The new function could have two choices based on the character of the point: (i) regular data are processed by a loss function which has less sensitivity to outliers (ii) whereas others are applied on outlier-sensitive loss function. One of challenges of this method is that outliers are difficult to be identified during training progress. A solution to that could be the use of unsupervised techniques from approach one, which does not require pro knowledge of outliers.
 %A solution could be analysing the whole data using statistical methods before each time assigning a corresponding loss function.  Another solution could be identifying outliers after training.  Specifically, data are trained as the regular procedure firstly, then we can assume that a certain percentage of data which is ordered by evaluation methods are identified as outliers.  Thus, an ideally ’outlier-free’ dataset is obtained and could be used to train and test.
 
 
 
 % we dont need this here...
 \subsection{Application}
-\paragraph{Prafull} Information about outlier can be extended in fields like finance, medical, etc. Some domain-specific implementation of outlier detection is as follows.
+\paragraph{} Information about outlier can be extended in fields like finance, medical, etc. Some domain-specific implementation of outlier detection is as follows.
 
 \paragraph{Intrusion Detection System: }There are applications which maintain data regarding a system call to the operating system, network logs, etc. Any abnormal data can lead us to a malicious event.
 \paragraph{Credit-card fraud:} Credit card information like its number and security code at times is compromised. A particular credit card stores the patterns of shopping for a user, in case a user makes an unlikely purchase, the information can be treated and dealt as an outlier.
@@ -84,12 +84,12 @@ Prafull\inst{1}\orcidID{c}}
 
 % outlier detection methods
 
-\paragraph{Prafull} A basic analogy of understanding outliers is in terms of local and global outliers. A global outlier is identified using a binary value of 0 and 1 whereas a local outlier is assigned a score based on the extent to which a point is an outlier. Usually, there is less prior known outliers. As a result, supervised learning methods are less effective in detection. Unsupervised learning methods, on the other hand, works well, as the methods are meant to deal with tasks with less prior information.
+\paragraph{} A basic analogy of understanding outliers is in terms of local and global outliers. A global outlier is identified using a binary value of 0 and 1 whereas a local outlier is assigned a score based on the extent to which a point is an outlier. Usually, there is less prior known outliers. As a result, supervised learning methods are less effective in detection. Unsupervised learning methods, on the other hand, works well, as the methods are meant to deal with tasks with less prior information.
 
-\paragraph{Prafull} The distribution of data can provide informative parameters,  which can be used for outlier detection. Such techniques are implemented on univariate datasets and are less effective., as the distribution parameters like mean, standard deviation are sensitive to outliers. 
+\paragraph{} The distribution of data can provide informative parameters,  which can be used for outlier detection. Such techniques are implemented on univariate datasets and are less effective., as the distribution parameters like mean, standard deviation are sensitive to outliers. 
 Next in line is a metric based on depth, which stacks data point into arch layers. The point on the outer layer has a higher tendency to be an outlier. Less efficient for high dimensional data.
 
-\paragraph{Prafull} The distance-based metric is also used to locate outliers. The technique utilizes the concepts of k nearest neighbours, where data points are ranked based on the distance with their neighbour. We then determine outliers by partitioning the data.  Finally, we also have K Nearest Neighbour and Local outlier factor-based techniques. Both the technoques utilizes concepts similar to density based approach.
+\paragraph{} The distance-based metric is also used to locate outliers. The technique utilizes the concepts of k nearest neighbours, where data points are ranked based on the distance with their neighbour. We then determine outliers by partitioning the data.  Finally, we also have K Nearest Neighbour and Local outlier factor-based techniques. Both the technoques utilizes concepts similar to density based approach.
 
 % previous works on loss functions
 
@@ -102,15 +102,15 @@ Next in line is a metric based on depth, which stacks data point into arch layer
 % consider mathematical expression in this section?
 
 \section{Background}
-\paragraph{Prafull} XGBoost is our baseline algorithm for anomaly detection and model performance. As a result, first section covers the historical development of Boosting and machine learning algorithms. The next section talks about the importance of removing irrelevant features, scaling data and choice of feature. The section also focus on how variation in data types impacts outlier detection. Followed by loss functions role in prediction modeling and outlier detection.The section contains a summary of gradient boosting techniques and a comparison of tree models with non-tree algorithms.
+\paragraph{} XGBoost is our baseline algorithm for anomaly detection and model performance. As a result, first section covers the historical development of Boosting and machine learning algorithms. The next section talks about the importance of removing irrelevant features, scaling data and choice of feature. The section also focus on how variation in data types impacts outlier detection. Followed by loss functions role in prediction modeling and outlier detection.The section contains a summary of gradient boosting techniques and a comparison of tree models with non-tree algorithms.
 
 
 \subsection{XGBoost}
-\paragraph{Prafull & Ziren }In 1998 Kearns and Valiant made a conjecture, which asked the question that is it possible to consolidate response from weak learners to form a strong learner. Robert Schapire paper on boosting algorithm was an answer to this conjecture. XGBoost is an implementation of gradient boosting by Friedman. The XGBoost is an greatly improved version of GBM. The main difference between XGBoost and GBM is that the definition of the objective functions. Moreover, the XGBoost additionally uses the complexity model in the objective function. From the perspective of Bias-variance trade-off, the complexity model can reduce the variance of the XGBoost model and prevent overfitting of that model.
+\paragraph{ }In 1998 Kearns and Valiant made a conjecture, which asked the question that is it possible to consolidate response from weak learners to form a strong learner. Robert Schapire paper on boosting algorithm was an answer to this conjecture. XGBoost is an implementation of gradient boosting by Friedman. The XGBoost is an greatly improved version of GBM. The main difference between XGBoost and GBM is that the definition of the objective functions. Moreover, the XGBoost additionally uses the complexity model in the objective function. From the perspective of Bias-variance trade-off, the complexity model can reduce the variance of the XGBoost model and prevent overfitting of that model.
 
 %\paragraph{Ziren}The XGBoost is an greatly improved version of GBM. The main difference between XGBoost and GBM is that the definition of the objective functions. Specifically, the XGBoost produces an approximation to a prediction by expanding the equation using Taylor Expansion, which includes both first and second derivatives. Instead, the GBM only uses first derivative \citep{friedman2001greedy}. Moreover, the XGBoost additionally uses the complexity model in the objective function. From the perspective of Bias-variance trade-off, the complexity model can reduce the variance of the XGBoost model and prevent overfitting of that model. Secondly, in the implementation of the XGBoost, it refers column subsampling in random forest. This can reduce the computations and the overfitting. Thirdly, the parallelisation is available in the XGBoost package. It is implemented by sorting the data points before training and saving into a block structure. So in following computations, the algorithm will use the previous saved structure rather than recomputing, which makes parallelisation possible. This feature can be also benefited when large data are used. Overall, the XGBoost is generally much faster in computation efficiency based on features above.
 
-\paragraph{Ziren}We will review the objective function of the XGBoost in the following paragraphs, as the loss function used in the objective function determines our second approach. The goal of XGBoost is building K regression trees that the expectation value is closing to the accurate value \citep{chen2016xgboost}. Assume there is a dataset which has $n$ observations with $x$ features each and with a corresponding variable $y$. We also define $\hat{y}_i$ as the prediction of each $y$, which can be shown as the result of applying a function on $x_i$
+\paragraph{} We will review the objective function of the XGBoost in the following paragraphs, as the loss function used in the objective function determines our second approach. The goal of XGBoost is building K regression trees that the expectation value is closing to the accurate value \citep{chen2016xgboost}. Assume there is a dataset which has $n$ observations with $x$ features each and with a corresponding variable $y$. We also define $\hat{y}_i$ as the prediction of each $y$, which can be shown as the result of applying a function on $x_i$
 \begin{equation}
     \hat{y}_i = f(x_i)
 \end{equation}
@@ -162,11 +162,11 @@ where $l$ is the loss function and $\Omega$ is the regularisation which prevents
 %This objective function aims to measure how good a tree is \citep{chen2016xgboost}. In specific, the smaller the score is, the better the structure score of a tree is.
 
 \subsection{Loss Functions}
-\paragraph{Ziren}The choice of a loss function should reflect the discrepancy between predicted values and real values, which would be minimised. Based on the above equation, we can define any loss function in the XGBoost as long as the first and the second derivatives are provided. However, the choice of loss functions are difficult to be applied on various problems. Because we are analysing the regression loss functions, the classification loss function will be not considered.
+\paragraph{}The choice of a loss function should reflect the discrepancy between predicted values and real values, which would be minimised. Based on the above equation, we can define any loss function in the XGBoost as long as the first and the second derivatives are provided. However, the choice of loss functions are difficult to be applied on various problems. Because we are analysing the regression loss functions, the classification loss function will be not considered.
 
-\paragraph{Ziren} Least squared (LS) loss function is a popular and default loss function used in the regression. Disadvantage of using LS in the regression problems is that the LS loss function squares the error, hence in some circumstances the error largely affects the objective. For instance, since outliers typically have larger difference of predictions and observations, the errors would be magnified. As the result, a very bad score will be given to the outliers comparing with other outlier sensitive loss functions. There are many variant of the LS loss which eliminates some limitations from ordinary one. A study in have described an advanced version, Stagewise Least Square loss (SLS) function, which solves LS problem in each stage with updating a target variable, rather than using a single LS equation. It keeps the advantages from the raw function, such as simplicity and efficiency, and makes improvements like better scalability and robustness. Similarly, in, the Weight Least Square (WLS) loss function could minimise the loss function by adding a weight to each pair of the prediction and the observation.
+\paragraph{} Least squared (LS) loss function is a popular and default loss function used in the regression. Disadvantage of using LS in the regression problems is that the LS loss function squares the error, hence in some circumstances the error largely affects the objective. For instance, since outliers typically have larger difference of predictions and observations, the errors would be magnified. As the result, a very bad score will be given to the outliers comparing with other outlier sensitive loss functions. There are many variant of the LS loss which eliminates some limitations from ordinary one. A study in have described an advanced version, Stagewise Least Square loss (SLS) function, which solves LS problem in each stage with updating a target variable, rather than using a single LS equation. It keeps the advantages from the raw function, such as simplicity and efficiency, and makes improvements like better scalability and robustness. Similarly, in, the Weight Least Square (WLS) loss function could minimise the loss function by adding a weight to each pair of the prediction and the observation.
 
-\paragraph{Ziren}With the aim to minimise the error from heavy tailed points, the Huber loss is an algorithm that is more sensitive to outliers. It attends to minimise the error of outliers by setting up a different function to points which are greater than a threshold and also maintains high performance for normal errors. In, it mentioned that the least square loss performs faster running speed than the Huber loss, but the variance of the least square loss is bigger in the experiment.
+\paragraph{}With the aim to minimise the error from heavy tailed points, the Huber loss is an algorithm that is more sensitive to outliers. It attends to minimise the error of outliers by setting up a different function to points which are greater than a threshold and also maintains high performance for normal errors. In, it mentioned that the least square loss performs faster running speed than the Huber loss, but the variance of the least square loss is bigger in the experiment.
 
 \subsection{Traditional Outlier Detection}
 
@@ -298,79 +298,84 @@ The unique feature about the framework is that it does not require the user to r
 
 \paragraph{} The objective function can be customised in XGBoost by defining corresponding the first and second derivatives of a loss function. In this section, we will firstly consider a function that is not sensitive to outliers and another function which is outlier-sensitive. Then, a combination of previous two loss functions will be introduced, which is outlier-tolerable and also performs better.
 
-\subsubsection{Square Loss}
+\subsubsection{Square Loss and Log Square Loss}
 The Square Loss is one of the most popular and basic loss function in the machine learning field. The idea is square the residual and generate first and second derivative.
 
-\[f(y-\hat{y}) = (y-\hat{y})^2\]
-\begin{equation}
-  f'(y - \hat{y})= -2(y-\hat{y})
-\end{equation}
-
-\begin{equation}
+%\[f(y-\hat{y}) = (y-\hat{y})^2\]
+\begin{align}
+  f(y-\hat{y}) = (y-\hat{y})^2 \\
+  f'(y - \hat{y})= -2(y-\hat{y}) \\
   f''(y - \hat{y})= 2
-\end{equation}
-The advantage of this function is that it can be applied on all real numbers without restrictions. However, it is not sensitive to outliers and will generate large errors when processing those points.
-\subsubsection{Log Square Loss}
-The Log Square Loss is a variation of the Log Loss, which applies an additional square on the error. The main purpose of this modification is magnifying the error and hence outliers can be easily identified. The ordinary Log Square Loss function can be defined as
+\end{align}
 
-\begin{equation}
-	f(y - \hat{y}) = ln((y-\hat{y})^2) = 2ln(y-\hat{y})
-\end{equation}
-The first and the second derivatives are 
-\begin{equation}\label{5.1.2.1}
-	\begin{split}
-		gradient & = -\frac{2}{y - \hat{y}} \\
-		hessian & = -\frac{2}{(y - \hat{y})^2}
-	\end{split}
-\end{equation}
+%\begin{equation}
+  %f''(y - \hat{y})= 2
+%\end{equation}
+The advantage of this function is that it can be applied on all real numbers without restrictions. However, it is too sensitive to outliers with large error and will generate large loss when processing those points. The Log Square Loss is a variation of the Log Loss, which applies an additional log on the error. The main purpose of this modification is alleviating the error and hence the influence of outliers with large error can be easily minimized. 
 
-However, there are two inappropriateness of this loss function. Firstly, the domain only accept positive numbers. It is worth mentioning that the first-order differentiation is not defined when the error $y-\hat{y}$ is non-positive and the second-order derivative cannot be applied by $(y-\hat{y}) = 0$. In the differentiation process we assumed the error will always be positive, because log function does not accept either negative numbers or zero. While in practice data, negative errors should be accepted. Secondly, the denominator of the training loss part should not always be negative. In specific, we may assume the denominator $H_j + \lambda$ is always negative, thus the training loss would be 0 or positive, according to the objective function. Therefore, the score of this tree structure is very likely to be a positive value. However, this may misguide the model to determine whether the tree is good, because the smaller value of a tree is better structure and in this case the better tree would have larger value. Apparently, this hessian will be always negative, in case of if $|\lambda|$ is smaller than $|H_j|$. Therefore, we need to modify the original derivatives to fit the XGBoost. We split the original function into 2 parts - values bigger or smaller than zero. The part with the error smaller than zero, an minus sign is applied before the equation. The detail expression of the function is expressed as follow:
+\begin{align}
+	f(y - \hat{y}) = ln((y-\hat{y})^2) = 2ln(y-\hat{y}) \\
+	gradient  = -\frac{2}{y - \hat{y}} \\
+	hessian  = -\frac{2}{(y - \hat{y})^2}
+\end{align}
+%The first and the second derivatives are 
+%\begin{equation}\label{5.1.2.1}
+	%\begin{split}
+		%gradient & = -\frac{2}{y - \hat{y}} \\
+		%hessian & = -\frac{2}{(y - \hat{y})^2}
+	%\end{split}
+%\end{equation}
 
-\begin{equation}
-  f(y - \hat{y})=\left\{
-  \begin{array}{@{}ll@{}}
-    2ln(y - \hat{y}), & (y - \hat{y}) > 0 \\
-    2ln(\hat{y} - y), & (y - \hat{y}) < 0
-  \end{array}\right.
-\end{equation}
-where $y - \hat{y}$ is the residual. Then the corresponding gradient and hessian are
-\begin{equation}
-  f'(y - \hat{y})=\left\{
-  \begin{array}{@{}ll@{}}
-    \frac{-2}{y - \hat{y}}, & (y - \hat{y}) > 0 \\
-    \frac{2}{\hat{y} - y} , & (y - \hat{y}) < 0
-  \end{array}\right.
-\end{equation}
+%However, there are two inappropriateness of this loss function. Firstly, the domain only accept positive numbers. It is worth mentioning that the first-order differentiation is not defined when the error $y-\hat{y}$ is non-positive and the second-order derivative cannot be applied by $(y-\hat{y}) = 0$. In the differentiation process we assumed the error will always be positive, because log function does not accept either negative numbers or zero. While in practice data, negative errors should be accepted. Secondly, the denominator of the training loss part should not always be negative. In specific, we may assume the denominator $H_j + \lambda$ is always negative, thus the training loss would be 0 or positive, according to the objective function. Therefore, the score of this tree structure is very likely to be a positive value. However, this may misguide the model to determine whether the tree is good, because the smaller value of a tree is better structure and in this case the better tree would have larger value. Apparently, this hessian will be always negative, in case of if $|\lambda|$ is smaller than $|H_j|$. Therefore, we need to modify the original derivatives to fit the XGBoost. We split the original function into 2 parts - values bigger or smaller than zero. The part with the error smaller than zero, an minus sign is applied before the equation. The detail expression of the function is expressed as follow:
 
-\begin{equation}
-  f''(y - \hat{y})=\left\{
-  \begin{array}{@{}ll@{}}
-    \frac{2}{(y - \hat{y})^2}, & (y - \hat{y}) > 0 \\
-    \frac{2}{(\hat{y} - y)^2} , & (y - \hat{y}) < 0
-  \end{array}\right.
-\end{equation}
-It is obvious that both derivatives can be further simplified because they have the equivalent expressions. So equations are merged respectively and we obtain the final form of the modified Log Square Loss
-\begin{equation}
-  f'(y - \hat{y})= \frac{-2}{y-\hat{y}}, \text{when } y-\hat{y} \neq 0
-\end{equation}
+However, there are two inappropriateness of this loss function. Firstly, the domain only accept positive numbers. It is worth mentioning that the first-order differentiation is not defined when the error $y-\hat{y}$ is non-positive and the second-order derivative cannot be applied by $(y-\hat{y}) = 0$. 
 
-\begin{equation}
-  f''(y - \hat{y})= \frac{2}{(y - \hat{y})^2}, \text{when } y-\hat{y} \neq 0
-\end{equation}
+%We split the original function into 2 parts - values bigger or smaller than zero. The part with the error smaller than zero, an minus sign is applied before the equation. The detail expression of the function is expressed as follow:
 
-Finally, the value of when $y - \hat{y} = 0$ is assumed to be 0 in both derivatives, because of perfect prediction.
+%\begin{equation}
+%  f(y - \hat{y})=\left\{
+  %\begin{array}{@{}ll@{}}
+    %2ln(y - \hat{y}), & (y - \hat{y}) > 0 \\
+    %2ln(\hat{y} - y), & (y - \hat{y}) < 0
+  %\end{array}\right.
+%\end{equation}
 
-\begin{equation}
-  f'(y - \hat{y})= 0, \text{when } y-\hat{y} = 0
-\end{equation}
+%\begin{equation}
+  %f'(y - \hat{y})=\left\{
+  %\begin{array}{@{}ll@{}}
+    %\frac{-2}{y - \hat{y}}, & (y - \hat{y}) > 0 \\
+    %\frac{2}{\hat{y} - y} , & (y - \hat{y}) < 0
+  %\end{array}\right.
+%\end{equation}
 
-\begin{equation}
-  f''(y - \hat{y})= 0, \text{when } y-\hat{y} = 0
-\end{equation}
+%\begin{equation}
+  %f''(y - \hat{y})=\left\{
+  %%\begin{array}{@{}ll@{}}
+    %\frac{2}{(y - \hat{y})^2}, & (y - \hat{y}) > 0 \\
+    %\frac{2}{(\hat{y} - y)^2} , & (y - \hat{y}) < 0
+  %\end{array}\right.
+%\end{equation}
+%It is obvious that both derivatives can be further simplified because they have the equivalent expressions. So equations are merged respectively and we obtain the final form of the modified Log Square Loss
+%\begin{equation}
+  %f'(y - \hat{y})= \frac{-2}{y-\hat{y}}, \text{when } y-\hat{y} \neq 0
+%\end{equation}
 
-There is a critical issue when we apply the Log Square Loss on the dataset with large magnitude, such as 1000000 and 2500000, that the Log Square Loss will produce constant predictions. The reason of this problem could be that the difference between each residual $y - \hat{y}$ would be similar when the residual is large, although the relative difference is small. For example, we assume that there are 2 predictions and real values such that $y$ = 1000000, 2500000 and $\hat{y}$ = 900000, 1000000 respectively, then residuals would be 100000 and 1500000, with relative difference 10\% and 60\% respectively. However, the Log Square Loss will generate results 23.02 for 10\% one and 28.44 for 60\% one by simply applying $log(error^2)$, which are very similar and will misguide the model to believe that both of results are good, whereas apparently the latter one should be classified as a bad prediction. Therefore, a suitable value of target variable should be selected. In the later evaluations, we will multiply a coefficient to make the mean of target variable around 10 if the mean value of it is significantly large, ensuring the best performance of the Log Square Loss.
-\subsubsection{Mixed Loss}
-Previous sections described two loss functions which could be used to process different data. The Square Loss function is usually applied on data which have small errors because it will magnify the error of the outlier point, whereas the Log Square Loss is suitable for data with many outliers but it performs bad in normal points. In this section, we will show a loss function that combines those features.
+%\begin{equation}
+  %f''(y - \hat{y})= \frac{2}{(y - \hat{y})^2}, \text{when } y-\hat{y} \neq 0
+%\end{equation}
+
+%Finally, the value of when $y - \hat{y} = 0$ is assumed to be 0 in both derivatives, because of perfect prediction.
+
+%\begin{equation}
+  %f'(y - \hat{y})= 0, \text{when } y-\hat{y} = 0
+%\end{equation}
+
+%\begin{equation}
+  %f''(y - \hat{y})= 0, \text{when } y-\hat{y} = 0
+%\end{equation}
+
+%There is a critical issue when we apply the Log Square Loss on the dataset with large magnitude, such as 1000000 and 2500000, that the Log Square Loss will produce constant predictions. The reason of this problem could be that the difference between each residual $y - \hat{y}$ would be similar when the residual is large, although the relative difference is small. For example, we assume that there are 2 predictions and real values such that $y$ = 1000000, 2500000 and $\hat{y}$ = 900000, 1000000 respectively, then residuals would be 100000 and 1500000, with relative difference 10\% and 60\% respectively. However, the Log Square Loss will generate results 23.02 for 10\% one and 28.44 for 60\% one by simply applying $log(error^2)$, which are very similar and will misguide the model to believe that both of results are good, whereas apparently the latter one should be classified as a bad prediction. Therefore, a suitable value of target variable should be selected. In the later evaluations, we will multiply a coefficient to make the mean of target variable around 10 if the mean value of it is significantly large, ensuring the best performance of the Log Square Loss.
+\subsubsection{Mixed Loss} Based on the shortcomings and advantages of the above two loss function we propose a new function termed as Mixed Loss. % Previous sections described two loss functions which could be used to process different data. The Square Loss function is usually applied on data which have small errors because it will magnify the error of the outlier point, whereas the Log Square Loss is suitable for data with many outliers but it performs bad in normal points. In this section, we will show a loss function that combines those features.
 
 The basic idea is splitting a loss function into 2 parts: if the error is less than a certain value, it uses the first function which is less sensitive to outliers to calculate the error; Otherwise, another function that is more sensitive to outliers will be applied. This can be expressed in a formula
 \begin{equation}
@@ -414,10 +419,15 @@ We expected that this loss function can have performance between $f_1$ and $f_2$
 
 
 \section{Outcomes}
-\paragraph{Prafulll} In below-mentioned graphs, the y-axis represents loss values, and the x-axis represents the variation in the outlier fraction. The plot represents the change in the loss as we keep increasing the number of outliers to remove. A trend can be observed from the below-presented graphs.  As we increase the outlier fraction, the loss first decreases and after a certain threshold, the loss again starts growing. This is an outcome in favour of our experiments, which proves the point that first, we are able to find outliers correctly and later when all the outliers are removed the outlier detection techniques are considering useful information as outliers. This threshold can be claimed to be fixed as it varies with the quality of the data generating process. \\
+\subsection{Approach 1:}
+\paragraph{} In below-mentioned graphs, the y-axis represents loss values, and the x-axis represents the variation in the outlier fraction. The plot represents the change in the loss as we keep increasing the number of outliers to remove. A trend can be observed from the below-presented graphs.  As we increase the outlier fraction, the loss first decreases and after a certain threshold, the loss again starts growing. This is an outcome in favour of our experiments, which proves the point that first, we are able to find outliers correctly and later when all the outliers are removed the outlier detection techniques are considering useful information as outliers. This threshold can be claimed to be fixed as it varies with the quality of the data generating process. \\
 \includegraphics[scale=0.37]{tt2.jpg}
 
-\paragraph{Ziren}Tables below show five-number summary statistics of 3 loss functions described before applied on 5 datasets. Based on these summary statistics, we can see that the Mixed Loss performs as we expected. Specifically, (i) mid performance (ii) mid or lowest maximum (iii) similar to f1
+\subsection{Approach 2:}
+\paragraph{}Tables below show five-number summary statistics of 3 loss functions described before applied on 5 datasets. Based on these summary statistics, we can see that the Mixed Loss performs as we expected. Specifically, (i) mid performance (ii) mid or lowest maximum (iii) similar to f1
+
+
+
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -430,6 +440,8 @@ Mixed & 0.00004177 & 0.04656 & 0.1018 & 0.1871 & 2.667 \\ \hline
 \end{center}
 \caption{Summary Statistics of 3 Loss Functions Based On House Sales in King County, USA Dataset}\label{summary-statistics-3-functions-k3}
 \end{table}
+
+
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -449,27 +461,24 @@ Mixed & 0.00004641 & 0.06521 & 0.1367 & 0.2350 & 0.8152 \\ \hline
 
 \section{Discussion}
 \subsection{Strength of proposal}
-\textbf{Prafull}
 \begin{itemize}
     \item Absorbing randomness of sampling: We have validated all the models and tests using ten-fold cross-validation, it has ensured that we have used all the instances in data, both as training and test set.
     \item The Increased accuracy of prediction:
     Approach 1 and 2 are able to deal with variations in the dataset and make the model either tolerable to outliers or improve the accuracy of prediction.
     \item Threshold Detection: The level of anomalies, removing which influenced the accuracy of prediction in a maximum number of cases lied between 15 to 30 per cent. Also, the trend explained above, which is first lowering then increasing of loss with an increase in threshold gives us the insight about the effectiveness of the technique.
+    \item Overall, the Mixed Loss has been succeed to show achievement of our expectation. The tolerance of outliers is proved by use of Log Square Loss to process unusual points.
 \end{itemize}
 
-\paragraph{Ziren}Overall, the Mixed Loss has been succeed to show achievement of our expectation. The tolerance of outliers is proved by use of Log Square Loss to process unusual points.
 
 \subsection{Weakness of proposal}
-\textbf{Prafull}
 \begin{itemize}
     \item The time complexity of techniques goes up to the square of the number of data instances multiplied by the number of features. Especially the ensemble technique which takes in multiple techniques as input give one average a better prediction accuracy, but is computationally expensive.
     \item Fair Evaluation and Benchmarks: If the outlier detected was not an actual outlier, but just an error in prediction can lead us to the loss of useful information. As a result, we require data analyst to manually test the outlier data instances. We did this work by gaining the domain knowledge and manually testing the data points.
+    \item This loss function will be failed if the performance of the function $f_1$ that processing usual points is much worse than the Log Square Loss. In this case, the Log Square Loss will be always better and $f_1$ will be no longer necessarily needed. 
 \end{itemize}
 
-\paragraph{Ziren}This loss function will be failed if the performance of the function $f_1$ that processing usual points is much worse than the Log Square Loss. In this case, the Log Square Loss will be always better and $f_1$ will be no longer necessarily needed. 
-
 \section{Conclusion}
-\paragraph{Prafull} The proposal utilizes two approaches to make better predictions. First, it uses traditional outlier detection techniques for removing outliers to improve XGBoost model performance. Secondly, the proposal uses user-defined loss functions to make the model tolerant of outliers.
+\paragraph{} The proposal utilizes two approaches to make better predictions. First, it uses traditional outlier detection techniques for removing outliers to improve XGBoost model performance. Secondly, the proposal uses user-defined loss functions to make the model tolerant of outliers.
 
 
 \subsection{Future Work}
